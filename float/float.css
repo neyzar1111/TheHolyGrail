@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(202, 175, 175);
+    box-sizing: border-box;
+}
+header{
+    height: 100px;
+}
+.section{
+    background-color: rebeccapurple;
+    margin: .5%;
+    box-sizing: border-box;
+
+}
+
+nav.section{
+    float:left;
+    width: 20%;
+    min-width: 10%;
+}
+
+main.section{
+    float:left;
+    /* width: 50%; */
+    width: 50%;
+    min-width: 30%;
+    background-color: red;
+}
+
+aside.section{
+    float:right;
+    width: 27%;
+    min-width: 20%;
+}
+footer{
+    clear: both;
+}

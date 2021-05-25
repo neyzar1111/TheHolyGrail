@@ -1,0 +1,96 @@
+.gridWrap{
+    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 3fr 2fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+}
+.section{
+    background-color: rgb(233, 233, 233);
+}
+header{
+    grid-area: header;
+}
+nav{
+    grid-area: nav;
+}
+main{
+    grid-area: main;
+}
+footer{
+    grid-area: footer;
+}
+
+/* __________________DECORATION___________________ */
+*{
+    box-sizing: border-box;
+}
+body{
+    font-size: 20px;
+}
+h2,h3,h4{
+    color: rgb(162, 151, 211);
+    margin-top: 30px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+p{
+    margin-top: 5px;
+}
+.section{
+    padding: 20px;
+}
+.code{
+    background-color: rgb(192, 192, 192);
+}
+.imgDiv{
+    width: 40%;
+    
+}
+
+/* footer */
+footer{
+    display: grid;
+    grid-template-columns: 40%;
+    grid-template-rows: 1fr;
+    justify-content: center;
+}
+
+/* aside */
+aside h2{
+    text-align: center;
+}
+.asideGridWrap{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-gap: 10px;
+    justify-content: center;
+}
+.asideGridWrap div{
+    background-color: lawngreen;
+    width: 100%;
+}
+.asideGridWrap img{
+    width: 100%;
+    min-width: 150px;
+}
+/* ________________________MEDIA QUERY___________________________ */
+@media screen and (max-width:1025px) {
+    .gridWrap{
+        width: 100%;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+    }
+}

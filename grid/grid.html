@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--___________________ my Styles_______________ -->
+    <link rel="stylesheet" href="grid.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Layout - Holy Grail</title>
+  </head>
+  <body>
+    <div class="gridWrap">
+        <header class="section">
+            <h1>Grid</h1>
+        </header>
+    
+        <nav class="section">
+            <ul>
+                <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a></li>
+                <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">A Complete Guide to Grid</a></li>
+                <li><a href=""></a></li>
+            </ul>
+
+            <ul>
+                <li><a href="..//flexBox/flexbox.html">My flexbox</a></li>
+                <li><a href="grid.html">My grid</a></li>
+            </ul>
+            
+        </nav>
+    
+        <main class="section">
+            <h1>A Complete Guide to Flexbox</h1>
+            
+            <h2>Properties for the Parent
+                (Grid Container)
+            </h2>
+
+            <hr>
+            <div class="property">
+                <h3>display</h3>
+                <p>Defines the element as a grid container and establishes a new grid formatting context for its contents.</p>
+                <div class="code">
+                    <code>
+                        .container { <br>
+                            grid-template-columns:  40px 50px auto 50px 40px; <br>
+                            grid-template-rows:  25% 100px auto; <br>
+                          }
+                    </code>
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>grid-template-columns <br>
+                    grid-template-row</h3>
+                <p>Defines the columns and rows of the grid with a space-separated list of values. The values represent the track size, and the space between them represents the grid line.</p>
+                <div class="code">
+                    <code>
+                        .container { <br>
+                            grid-template-columns:  40px 50px auto 50px 40px; <br>
+                            grid-template-rows:  25% 100px auto; <br>
+                          }
+                    </code>
+                </div>
+                <h6>repeat()</h6>
+                <div class="code">
+                    <code>
+                        .container { <br>
+                            grid-template-columns: repeat(3, 20px [col-start]); <br>
+                          }
+                    </code>
+                </div>
+                <p>
+                    Which is equivalent to this:
+                </p>
+                <div class="code">
+                    <code>
+                        .container { <br>
+                            grid-template-columns: 20px [col-start] 20px [col-start] 20px [col-start]; <br>
+                          }
+                    </code>
+                </div>
+
+            </div>
+
+            <div class="property">
+                <h3>grid-template</h3>
+                <p>A shorthand for setting grid-template-rows, grid-template-columns, and grid-template-areas in a single declaration.</p>
+                <div class="code">
+                    <code>
+                        .container { <br>
+                            grid-template: none | "grid-template-rows" / "grid-template-columns";<br>
+                          }
+                    </code>
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>column-gap <br>
+                    row-gap <br>
+                    grid-column-gap <br>
+                    grid-row-gap<br>
+                </h3>
+                <p>Specifies the size of the grid lines. You can think of it like setting the width of the gutters between the columns/rows.</p>
+                <div class="code">
+                    <code>
+                        .container { <br>
+                            grid-template-columns: 100px 50px 100px; <br>
+                            grid-template-rows: 80px auto 80px; <br>
+                            column-gap: 10px;<br>
+                            row-gap: 15px;<br>
+                          }
+                    </code>
+                </div>
+                <p>
+                    Note: The grid- prefix will be removed and grid-column-gap and grid-row-gap renamed to column-gap and row-gap. The unprefixed properties are already supported in Chrome 68+, Safari 11.2 Release 50+ and Opera 54+.
+                </p>
+                <p>
+                    Note: <dfn>gap grid-gap a shorthand for row-gap and column-gap</dfn>
+                    <div class="code">
+                        <code>
+                            gap: "grid-row-gap" "grid-column-gap"; 
+                        </code>
+                    </div>  
+                </p>
+            </div>
+
+            <div class="property">
+                <h3>justify-items  (horizontal align)</h3>
+                <p>Aligns grid items along the inline (row) axis (as opposed to align-items which aligns along the block (column) axis). This value applies to all grid items inside the container.</p>
+                <div class="code">
+                    <code>
+                        .container { <br>
+                            justify-items: start | end | center | stretch; <br>
+                          }
+                    </code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:95%" src="https://css-tricks.com/wp-content/uploads/2018/11/justify-items-start.svg" alt="">
+                    <code class="code"> justify-items: start;</code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/justify-items-end.svg" alt="">
+                    <code class="code">justify-items: end;</code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/justify-items-center.svg" alt="">
+                    <code class="code" >justify-items: center;</code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/justify-items-stretch.svg" alt="">
+                    <code class="code" >justify-items: stretch;</code>
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>align-items(vertical align)</h3>
+                <p>
+                    Aligns grid items along the block (column) axis (as opposed to justify-items which aligns along the inline (row) axis). This value applies to all grid items inside the container.
+                </p>
+                <div class="code">
+                    <code>
+                        .container { br
+                            align-items: start | end | center | stretch;br
+                          }
+                    </code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/align-items-start.svg" alt="">
+                    <code class="code" >align-items: start;</code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/align-items-end.svg" alt="">
+                    <code class="code" >align-items: end;</code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/align-items-center.svg" alt="">
+                    <code class="code" >align-items: center;</code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/align-items-stretch.svg" alt="">
+                    <code class="code" >align-items: stretch;</code>
+                </div>
+                <p>
+
+                </p>
+            </div>
+
+            <div class="property">
+                <h3>place-items</h3>
+                <p>place-items sets both the align-items and justify-items properties in a single declaration.</p>
+                <div class="code">
+                    <code>
+                        .container{ <br>
+                            place-items: "align-items" && "justify-items" <br>
+                        }
+                    </code>
+
+                </div>
+                <p>
+                    Note: If the second value is omitted, the first value is assigned to both properties.
+                </p>
+            </div>
+
+            <div class="property">
+                <h3>justify-content</h3>
+                <p>Sometimes the total size of your grid might be less than the size of its grid container. This could happen if all of your grid items are sized with non-flexible units like px. In this case you can set the alignment of the grid within the grid container. This property aligns the grid along the inline (row) axis (as opposed to align-content which aligns the grid along the block (column) axis).</p>
+                <div class="code">
+                    <code>
+                        .container { <br>
+                            justify-content: start | end | center | stretch | space-around | space-between | space-evenly;    <br>
+                          }
+                    </code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-start.svg" alt="">
+                    <code class="code" >  justify-content: start;</code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-end.svg" alt="">
+                    <code class="code" >  justify-content: end;</code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-center.svg" alt="">
+                    <code class="code" >  justify-content: center;</code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-stretch.svg" alt="">
+                    <code class="code" >  justify-content: stretch;</code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-space-around.svg" alt="">
+                    <code class="code" >  justify-content: space-around;</code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-space-between.svg" alt="">
+                    <code class="code" >  justify-content: space-between;</code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-space-evenly.svg" alt="">
+                    <code class="code" >  justify-content: space-evenly;</code>
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>align-content(vertical align all content relatively to container parent)</h3>
+                <p>Sometimes the total size of your grid might be less than the size of its grid container. This could happen if all of your grid items are sized with non-flexible units like px. In this case you can set the alignment of the grid within the grid container. This property aligns the grid along the block (column) axis (as opposed to justify-content which aligns the grid along the inline (row) axis).</p>
+                <div class="code">
+                    <code>
+                        .container { <br>
+                            align-content: start | end | center | stretch | space-around | space-between | space-evenly;   <br> 
+                          } 
+                    </code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/align-content-start.svg" alt="">
+                    <code class="code" >  align-content: start; </code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/align-content-end.svg" alt="">
+                    <code class="code" >  align-content: end; </code>
+                </div>                
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/align-content-center.svg" alt="">
+                    <code class="code" >  align-content: center; </code>
+                </div>                
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/align-content-stretch.svg" alt="">
+                    <code class="code" >  align-content: stretch; </code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/align-content-space-between.svg" alt="">
+                    <code class="code" >  align-content: space-between; </code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/align-content-space-around.svg" alt="">
+                    <code class="code" >  align-content: space-around; </code>
+                </div>
+                <div class="imgDiv" >
+                    <img styele="width:100%;height:90%" src="https://css-tricks.com/wp-content/uploads/2018/11/align-content-space-evenly.svg" alt="">
+                    <code class="code" >  align-content: space-evenly; </code>
+                </div>
+                
+            </div>
+
+            <div class="property">
+                <h3>place-content</h3>
+                <p>place-content sets both the align-content and justify-content properties in a single declaration.</p>
+                <div class="code">
+                    <code>
+                        .container { <br>
+                            place-content: "align-content" && "justify-content"   <br> 
+                          } 
+                    </code>
+                </div>
+                <p>
+                    Note:If the second value is omitted, the first value is assigned to both properties.
+                </p>
+            </div>
+
+            <div class="property">
+                <h3>grid-auto-columns
+                    grid-auto-rows</h3>
+                <p>Specifies the size of any auto-generated grid tracks (aka implicit grid tracks). Implicit tracks get created when there are more grid items than cells in the grid or when a grid item is placed outside of the explicit grid.</p>
+                <a href="https://css-tricks.com/difference-explicit-implicit-grids/"> The Difference Between Explicit and Implicit Grids</a>
+                <div class="code">
+                    <code>
+                        .container { <br>
+                            grid-template-columns: 60px 60px; <br>
+                            grid-template-rows: 90px 90px; <br>
+                          }
+                    </code>
+                </div>
+            </div>
+
+
+        </main>
+    
+        <aside class="section">
+            <h2>Aside</h2>
+            <div class="asideGridWrap">
+                <img src="https://mdn.mozillademos.org/files/14643/1_Grid_Cell.png" alt="">
+                <div>
+                    <p>Lorem ipsum dolor ipsum sunt itaque quaerat voluptate?</p>
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor ipsum sunt itaque quaerat voluptate?</p>
+                </div>
+            </div>
+        </aside>
+    
+        <footer class="section">
+            <p>&copy; Aichurok Enazarova 2021</p>
+        </footer>
+    </div>
+  </body>
+</html>
+</body>
+</html>
